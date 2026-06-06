@@ -1,0 +1,10 @@
+load("@aspect_bazel_lib//lib:copy_to_directory.bzl", "copy_to_directory")
+
+copy_to_directory(
+    name = "artifact",
+    srcs = [
+    "//cmd/run:run_linux_amd64",      
+        "//cmd/run:run_linux_arm64",    
+    ],
+    root_paths = ["**"],
+)

@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/lugolven/bazelisk-ubuntu-container:1.29.0-ubuntu25.10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run tests
+        run: bazel test //...
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact
+          path: bazel-bin/tools/build/artifact

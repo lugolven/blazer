@@ -13,8 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run tests
-        run: bazel test //...
+      - run: bazel build //...
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

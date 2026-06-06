@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     gcc \
     git \
+    gh \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 

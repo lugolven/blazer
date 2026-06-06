@@ -7,7 +7,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     container:
       image: ghcr.io/lugolven/bazelisk-ubuntu-container:1.29.0-ubuntu25.10
     steps:
